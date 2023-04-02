@@ -5,11 +5,11 @@ const cron = require('node-cron');
 
 //authentication
 const client = new Twitter({
-    consumer_key: '4rEkhnBUK1Copjc49qwcRfPtS',
-    consumer_secret: 'MnhlYLLiS76SCLm3TyEMgUoHmWRURtkHVA7WfOSi9ZCUMX3e1c',
-    access_token_key: '1348566483467702272-JSQRAG965cUGIgLIudWvDv9ySh14M3',
-    access_token_secret: 'FYiCWppvh1hjiOGVPAckD7aMU2aVwZofuItzGmIXJ4wkM',
-    //bearer_token: 'AAAAAAAAAAAAAAAAAAAAAOLYmQEAAAAAfFU4iVrcndCCZauB7RT1ZotjjYU%3D8vNdZwp51hSfiSvSxZgiDTVQ50Hx7WmTg39tiB5Z126hH0NZWv'
+    consumer_key: '',
+    consumer_secret: '',
+    access_token_key: '',
+    access_token_secret: '',
+    //bearer_token: ''
   });
 
 //search the top 4 posts 
@@ -48,4 +48,4 @@ function tweetLatestNews() {
 }
   
 //make the task repetitive each morning
-tweetLatestNews()
+cron.schedule('0 8 * * *', tweetLatestNews);
